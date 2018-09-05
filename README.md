@@ -66,10 +66,10 @@ let description = await page.q('[itemprop="about"]').text();
 # Added methods
 
 - [class: ElementSelector](#class-elementselector)
-  * [elementHandle.isVisible()](#elementhandleisvisible)
-  * [elementHandle.attr(name, val)](#pageselector)
-  * [elementHandle.text()](#pageselector)
-  * [elementHandle.prop(prop)](#pageselector)
+  * [elementSelector.isVisible()](#elementselectorisvisible)
+  * [elementSelector.attr(name, val)](#elementselectorattr)
+  * [elementSelector.text()](#elementselectortext)
+  * [elementSelector.prop(prop)](#elementselectorprop)
 
 - [class: Page](#class-page)
   * [page.q(selector)](#pageselector)
@@ -82,6 +82,46 @@ let description = await page.q('[itemprop="about"]').text();
   * [elementHandle.attr(name, val)](#pageselector)
   * [elementHandle.text()](#pageselector)
   * [elementHandle.prop(prop)](#pageselector)
+
+
+# Documentation
+
+### class: ElementSelector
+
+New class introduced by this package. ElementSelector can be created with the [page.q](#pageselector) method.
+
+Unlike `page.$`, calling `page.q` alone won't perform any evaluate action/element won't get requested. It is made to request element parts like, attributes, or inner content, rather than the element itself.
+It will make the crawling experience faster/easier to maintain:
+```js
+let $el = await (await page.$('title')).text()
+let $el2 = await page.q('title').text()
+console.log($el, $el2)
+```
+
+Once you call a method (like `text`, `attr`, etc..) over q, the `elementHandle` inside will be cached so it won't be requested everytime you call another method over it
+
+#### elementSelector.isVisible()
+- returns: <[bool]>
+
+Checks if selector is visible.
+
+#### elementSelector.attr(name, val)
+- `name` <[string]> Attribute's name
+- `val` <[mixed]> Optional attribute's value to set
+- returns: <[null]>
+
+Gets/Sets requested attribute
+
+#### elementSelector.text()
+- returns: <[string]>
+
+Returns element's innerText
+
+#### elementSelector.prop(name)
+- `name` <[string]> Property name
+- returns: <[string]>
+
+Returns element's property name
 
 # You may also want
 

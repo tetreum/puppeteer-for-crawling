@@ -1,0 +1,15 @@
+{
+  "name": "puppeteer-for-crawling",
+  "version": "0.0.1",
+  "description" : "Daily use crawling methods for puppeteer",
+  "keywords": ["puppeteer", "crawling", "crawl", "crawler"],
+  "repository": "github:tetreum/puppeteer-for-crawling",
+  "author": "tetreum",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">= 8.0.0"
+  }
+}

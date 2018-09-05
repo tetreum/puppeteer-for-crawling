@@ -101,7 +101,7 @@ console.log($el, $el2)
 Once you call a method (like `text`, `attr`, etc..) over q, the `elementHandle` inside will be cached so it won't be requested everytime you call another method over it
 
 #### elementSelector.isVisible()
-- returns: <[bool]>
+- returns: <[boolean]>
 
 Checks if selector is visible.
 
@@ -122,6 +122,73 @@ Returns element's innerText
 - returns: <[string]>
 
 Returns element's property name
+
+### class: Page
+
+From puppeteer.
+
+#### page.q(selector)
+- `selector` <[string]> A [selector] to query frame for
+- returns: <[ElementSelector]>
+
+The method prepares to queries frame for the selector.
+
+#### page.exists(selector)
+- `selector` <[string]> A [selector] to query frame for
+- returns: <[boolean]>
+
+The method checks if given selector exists.
+
+#### page.getElementsAttribute(selector, attribute)
+- `selector` <[string]> A [selector] to query frame for
+- `attribute` <[string]> Attribute's name to get from selector
+- returns: <[Array]<[String]>>
+
+Gets attribute values from from the selector
+
+#### page.fill(selector, fields)
+- `selector` <[string]> A [selector] to query frame for the form
+- `fields` <[Object]> Key (field name)<->Value object of fields to set
+- returns: <[Array]<[String]>>
+
+Gets attribute values from from the selector
+
+### class: ElementHandle
+
+From puppeteer.
+
+#### elementHandle.isVisible()
+- returns: <[boolean]>
+
+Checks if selector is visible.
+
+#### elementHandle.attr(name, val)
+- `name` <[string]> Attribute's name
+- `val` <[mixed]> Optional attribute's value to set
+- returns: <[null]>
+
+Gets/Sets requested attribute
+
+#### elementHandle.text()
+- returns: <[string]>
+
+Returns element's innerText
+
+#### elementHandle.prop(name)
+- `name` <[string]> Property name
+- returns: <[string]>
+
+Returns element's property name
+
+[Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array "Array"
+[Object]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object "Object"
+[string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type "String"
+[boolean]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type "Boolean"
+[Page]: #class-page "Page"
+[ElementSelector]: #class-elementselector "ElementSelector"
+[selector]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors "selector"
+[null]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type "Null"
+
 
 # You may also want
 

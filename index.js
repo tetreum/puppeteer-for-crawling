@@ -145,7 +145,7 @@ Page.prototype.fill = async function(selector, fields){
 };
 
 
-const ElementHandle = require( "puppeteer/lib/ElementHandle" ).ElementHandle;
+const ElementHandle = require( "puppeteer/lib/ExecutionContext" ).ElementHandle;
 
 /**
  * Check if element is visible in the DOM

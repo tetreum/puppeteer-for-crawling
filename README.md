@@ -69,19 +69,19 @@ let description = await page.q('[itemprop="about"]').text();
   * [elementSelector.isVisible()](#elementselectorisvisible)
   * [elementSelector.attr(name, val)](#elementselectorattr)
   * [elementSelector.text()](#elementselectortext)
-  * [elementSelector.prop(prop)](#elementselectorprop)
+  * [elementSelector.prop(prop)](#elementselectorpropname)
 
 - [class: Page](#class-page)
-  * [page.q(selector)](#pageselector)
-  * [page.exists(selector)](#pageselector)
-  * [page.getElementsAttribute((selector, attribute)](#pageselector)
-  * [page.fill(selector, fields)](#pageselector)
+  * [page.q(selector)](#pageqselector)
+  * [page.exists(selector)](#pageexistsselector)
+  * [page.getElementsAttribute((selector, attribute)](#pagegetelementsattributeselector-attribute)
+  * [page.fill(selector, fields)](#pagefillselector-fields)
 
-- [class: ElementHandle](#class-page)
+- [class: ElementHandle](#class-elementhandle)
   * [elementHandle.isVisible()](#elementhandleisvisible)
-  * [elementHandle.attr(name, val)](#pageselector)
-  * [elementHandle.text()](#pageselector)
-  * [elementHandle.prop(prop)](#pageselector)
+  * [elementHandle.attr(name, val)](#elementhandleattrname-val)
+  * [elementHandle.text()](#elementhandletext)
+  * [elementHandle.prop(prop)](#elementhandlepropname)
 
 
 # Documentation
